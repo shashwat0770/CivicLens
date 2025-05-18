@@ -68,13 +68,27 @@ const IssueForm: React.FC<IssueFormProps> = ({ onSubmit }) => {
         async (position) => {
           const { latitude, longitude } = position.coords;
           
-          // Mock reverse geocoding (would use Google Maps Geocoding API in production)
-          const mockAddress = "123 Main Street, Anytown, USA";
+          // For demo purposes, use Delhi addresses
+          // In a real app, would use Google Maps Geocoding API
+          const delhiAreas = [
+            "Connaught Place, New Delhi",
+            "Nehru Place, New Delhi",
+            "Karol Bagh, Delhi",
+            "Chandni Chowk, Old Delhi",
+            "Lajpat Nagar, Delhi",
+            "Dwarka Sector 10, New Delhi",
+            "Rohini Sector 9, Delhi",
+            "Greater Kailash, New Delhi",
+            "Rajouri Garden, Delhi",
+            "Saket, New Delhi"
+          ];
+          
+          const randomAddress = delhiAreas[Math.floor(Math.random() * delhiAreas.length)];
           
           setLocation({
             lat: latitude,
             lng: longitude,
-            address: mockAddress
+            address: randomAddress
           });
           
           setIsGettingLocation(false);
@@ -110,8 +124,11 @@ const IssueForm: React.FC<IssueFormProps> = ({ onSubmit }) => {
             <FormItem>
               <FormLabel>Issue Title</FormLabel>
               <FormControl>
-                <Input placeholder="E.g., Broken streetlight on Main St" {...field} />
+                <Input placeholder="E.g., Broken road in Karol Bagh" {...field} />
               </FormControl>
+              <FormDescription>
+                Common issues: Broken Roads, Illegal Parking, Garbage Disposal, Noise Pollution, Open Defecation
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -125,7 +142,7 @@ const IssueForm: React.FC<IssueFormProps> = ({ onSubmit }) => {
               <FormLabel>Description</FormLabel>
               <FormControl>
                 <Textarea 
-                  placeholder="Please describe the issue in detail..." 
+                  placeholder="Please describe the issue in detail... For example: Large potholes on the road near Karol Bagh Metro Station are causing accidents for two-wheelers." 
                   className="min-h-32"
                   {...field} 
                 />

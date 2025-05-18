@@ -1,5 +1,4 @@
 
-
 export type UserRole = 'citizen' | 'admin';
 
 export interface User {
@@ -38,4 +37,3 @@ export interface Issue {
   upvotes: string[];
   comments: Comment[];
 }
-

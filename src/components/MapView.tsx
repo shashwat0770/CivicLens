@@ -29,7 +29,7 @@ const MapView: React.FC<MapViewProps> = ({ issues, onSelectIssue }) => {
     <div className="border rounded-lg p-4 h-96 relative bg-gray-100 overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center">
         <p className="text-gray-500 font-medium">
-          Map integration will be implemented in Phase 4
+          Delhi Map View - Coming Soon
         </p>
       </div>
       
@@ -40,6 +40,7 @@ const MapView: React.FC<MapViewProps> = ({ issues, onSelectIssue }) => {
             key={issue.id}
             className="absolute cursor-pointer transform -translate-x-1/2 -translate-y-1/2 hover:z-10"
             style={{ 
+              // Positions for Delhi coordinates (roughly distributed)
               left: `${30 + Math.random() * 40}%`, 
               top: `${30 + Math.random() * 40}%`
             }}

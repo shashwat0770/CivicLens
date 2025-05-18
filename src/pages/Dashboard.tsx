@@ -24,18 +24,18 @@ const Dashboard = () => {
   const [statusFilter, setStatusFilter] = useState<IssueStatus[]>(['Pending', 'In Progress', 'Resolved']);
   const [selectedIssue, setSelectedIssue] = useState<Issue | null>(null);
 
-  // Mock data
+  // Mock data with Indian urban issues
   useEffect(() => {
     const mockIssues: Issue[] = [
       {
         id: '1',
-        title: 'Broken Streetlight',
-        description: 'The streetlight at the corner of Main and 1st has been out for over a week, making the intersection dangerous at night.',
-        imageUrl: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=800&h=500&q=80',
+        title: 'Broken Road in Karol Bagh',
+        description: 'The road near Karol Bagh metro station has several large potholes making it dangerous for two-wheelers especially during monsoon season.',
+        imageUrl: 'https://images.unsplash.com/photo-1552761831-7af39aude0ca?auto=format&fit=crop&w=800&h=500&q=80',
         location: {
-          lat: 40.7128,
-          lng: -74.0060,
-          address: 'Corner of Main St & 1st Ave'
+          lat: 28.6466,
+          lng: 77.1905,
+          address: 'Near Karol Bagh Metro Station, Delhi'
         },
         status: 'Pending',
         createdBy: '123',
@@ -44,22 +44,22 @@ const Dashboard = () => {
         comments: [
           {
             id: 'c1',
-            text: 'I noticed this too. Very dangerous!',
+            text: 'My bike got damaged because of these potholes!',
             userId: 'user1',
-            userName: 'Jane Doe',
+            userName: 'Raj Kumar',
             createdAt: new Date('2023-05-16')
           }
         ]
       },
       {
         id: '2',
-        title: 'Pothole on Oak Street',
-        description: 'Large pothole on Oak Street between 3rd and 4th Avenue. It\'s causing damage to vehicles.',
-        imageUrl: 'https://images.unsplash.com/photo-1552761831-7af39aude0ca?auto=format&fit=crop&w=800&h=500&q=80',
+        title: 'Illegal Parking in Connaught Place',
+        description: 'Multiple cars are constantly parked in no-parking zones near Connaught Place, blocking pedestrian walkways and causing traffic congestion.',
+        imageUrl: 'https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=800&h=500&q=80',
         location: {
-          lat: 40.7200,
-          lng: -74.0100,
-          address: 'Oak Street between 3rd and 4th Ave'
+          lat: 28.6289,
+          lng: 77.2065,
+          address: 'Block A, Connaught Place, New Delhi'
         },
         status: 'In Progress',
         createdBy: '123',
@@ -69,13 +69,13 @@ const Dashboard = () => {
       },
       {
         id: '3',
-        title: 'Overflowing Trash Bin',
-        description: 'The public trash bin in Central Park hasn\'t been emptied for days and is overflowing.',
+        title: 'Littering and Waste Disposal Issue',
+        description: 'The area near Nehru Place market has overflowing garbage bins that haven\'t been cleaned for days causing health hazards.',
         imageUrl: 'https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=800&h=500&q=80',
         location: {
-          lat: 40.7300,
-          lng: -74.0050,
-          address: 'Central Park, near east entrance'
+          lat: 28.5491,
+          lng: 77.2540,
+          address: 'Nehru Place Market, New Delhi'
         },
         status: 'Resolved',
         createdBy: 'user2',
@@ -85,22 +85,22 @@ const Dashboard = () => {
         comments: [
           {
             id: 'c2',
-            text: 'This has been cleaned up now.',
+            text: 'MCD has cleaned up this area now.',
             userId: 'admin1',
-            userName: 'Park Services',
+            userName: 'Sanitation Department',
             createdAt: new Date('2023-05-07')
           }
         ]
       },
       {
         id: '4',
-        title: 'Graffiti on Public Library',
-        description: 'Someone has spray painted graffiti on the north wall of the public library building.',
+        title: 'Noise Pollution from Construction',
+        description: 'Ongoing construction at Dwarka Sector 12 continues even during night hours causing severe noise pollution for residents.',
         imageUrl: 'https://images.unsplash.com/photo-1533625216968-c4d9a9a7a636?auto=format&fit=crop&w=800&h=500&q=80',
         location: {
-          lat: 40.7180,
-          lng: -74.0080,
-          address: 'Public Library, 500 Main St'
+          lat: 28.5921,
+          lng: 77.0420,
+          address: 'Sector 12, Dwarka, New Delhi'
         },
         status: 'Pending',
         createdBy: 'user4',
@@ -110,13 +110,13 @@ const Dashboard = () => {
       },
       {
         id: '5',
-        title: 'Broken Swing in Park',
-        description: 'One of the swings in the children\'s playground is broken and poses a safety risk.',
+        title: 'Open Defecation Near Yamuna Bank',
+        description: 'Despite Swachh Bharat initiatives, open defecation is common near the Yamuna river banks near unauthorized colonies, creating health hazards.',
         imageUrl: 'https://images.unsplash.com/photo-1575783970733-1aaedde1db74?auto=format&fit=crop&w=800&h=500&q=80',
         location: {
-          lat: 40.7250,
-          lng: -74.0120,
-          address: 'City Park Playground, West Side'
+          lat: 28.6126,
+          lng: 77.2571,
+          address: 'Yamuna Khadar area, East Delhi'
         },
         status: 'In Progress',
         createdBy: 'user5',
@@ -126,16 +126,16 @@ const Dashboard = () => {
         comments: [
           {
             id: 'c3',
-            text: 'My child almost got hurt on this swing.',
+            text: 'This is a serious health concern for local residents.',
             userId: 'user1',
-            userName: 'Concerned Parent',
+            userName: 'Public Health Advocate',
             createdAt: new Date('2023-05-09')
           },
           {
             id: 'c4',
-            text: 'We have ordered replacement parts and will fix this by next week.',
+            text: 'Mobile toilets are being installed in the area to address this issue.',
             userId: 'admin2',
-            userName: 'Park Maintenance',
+            userName: 'Delhi Jal Board',
             createdAt: new Date('2023-05-11')
           }
         ]
@@ -201,7 +201,7 @@ const Dashboard = () => {
         <div>
           <h1 className="text-3xl font-bold">Dashboard</h1>
           <p className="text-gray-600">
-            View and manage reported civic issues in your area
+            View and manage reported civic issues in Delhi
           </p>
         </div>
         

@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAuth } from '../context/AuthContext';
 import { toast } from 'sonner';
 import { AlertCircle } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 const ReportIssue = () => {
   const { user } = useAuth();
@@ -13,18 +14,58 @@ const ReportIssue = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmitReport = async (data: any) => {
+    if (!user) {
+      toast.error('You must be logged in to report an issue');
+      return;
+    }
+    
     setIsSubmitting(true);
     
     try {
-      // In a real app, this would make an API call
-      console.log('Submitting issue:', data);
+      // Upload image if provided
+      let imageUrl = null;
+      if (data.image) {
+        const fileExt = data.image.name.split('.').pop();
+        const filePath = `issue-images/${Math.random().toString(36).substring(2)}.${fileExt}`;
+        
+        const { error: uploadError } = await supabase.storage
+          .from('issues')
+          .upload(filePath, data.image);
+          
+        if (uploadError) {
+          throw uploadError;
+        }
+        
+        const { data: imageData } = supabase.storage
+          .from('issues')
+          .getPublicUrl(filePath);
+          
+        if (imageData) {
+          imageUrl = imageData.publicUrl;
+        }
+      }
       
-      // Mock successful submission
-      setTimeout(() => {
-        setIsSubmitting(false);
-        toast.success('Issue reported successfully!');
-        navigate('/dashboard');
-      }, 1500);
+      // Save issue data to Supabase
+      const { error } = await supabase
+        .from('issues')
+        .insert({
+          title: data.title,
+          description: data.description,
+          image_url: imageUrl,
+          location_lat: data.location.lat,
+          location_lng: data.location.lng,
+          location_address: data.location.address,
+          status: 'Pending',
+          created_by: user.id
+        });
+        
+      if (error) {
+        throw error;
+      }
+      
+      setIsSubmitting(false);
+      toast.success('Issue reported successfully!');
+      navigate('/dashboard');
     } catch (error) {
       console.error('Error submitting report:', error);
       setIsSubmitting(false);
@@ -51,7 +92,7 @@ const ReportIssue = () => {
       <div className="mb-8">
         <h1 className="text-3xl font-bold">Report an Issue</h1>
         <p className="text-gray-600 mt-2">
-          Help improve your community by reporting local problems
+          Help improve your community by reporting local problems in Delhi
         </p>
       </div>
       
