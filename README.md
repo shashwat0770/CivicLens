@@ -31,6 +31,8 @@ Local civic issues such as potholes, broken streetlights, open drains, and garba
 - Submit complaints with:
   - Title & Description
   - Image Upload via **Cloudinary**
+  
+
 ![Screenshot 2025-05-18 195800](https://github.com/user-attachments/assets/0bc3f113-6f04-441a-bb53-d341ce0143ef)
 
 
@@ -48,6 +50,7 @@ Local civic issues such as potholes, broken streetlights, open drains, and garba
 
 - Admin login for municipal staff
 - View complaints by zone or urgency
+
 
 ![Screenshot 2025-05-18 195737](https://github.com/user-attachments/assets/1b0b1542-bb00-4cb0-97d5-427b79306a9f)
 
