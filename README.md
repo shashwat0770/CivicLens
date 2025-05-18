@@ -1,73 +1,89 @@
-# Welcome to your Lovable project
+# 🏙️ CivicLens – Local Issue Reporting and Resolution
 
-## Project info
+## 🧩 Problem Statement
 
-**URL**: https://lovable.dev/projects/56dd278b-29e7-483e-88e6-bc4948c0841c
+Local civic issues such as potholes, broken streetlights, open drains, and garbage dumps often go unreported due to inefficient or non-transparent communication between citizens and local authorities. This results in unresolved issues and public dissatisfaction.
 
-## How can I edit this code?
+![Screenshot 2025-05-18 195825](https://github.com/user-attachments/assets/c1e66a6b-18d9-41f0-a10c-7cf8eabe2b48)
 
-There are several ways of editing your application.
 
-**Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/56dd278b-29e7-483e-88e6-bc4948c0841c) and start prompting.
+## 💡 Solution Overview
 
-Changes made via Lovable will be committed automatically to this repo.
+**CivicLens** is a full-stack web platform that allows citizens to report civic problems using images, geo-location, and detailed descriptions. The issues are tracked and visible to municipal authorities who manage their resolution by updating status, assigning technicians, and adding progress notes.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Key Features
+![Screenshot 2025-05-18 195841](https://github.com/user-attachments/assets/56da7ae9-77cf-4ff0-8ed2-a5dbae646ec1)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Follow these steps:
+### 👤 Citizen Portal
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Register/Login (Email & Google OAuth)
+- Submit complaints with:
+  - Title & Description
+  - Image Upload via **Cloudinary**
+![Screenshot 2025-05-18 195800](https://github.com/user-attachments/assets/0bc3f113-6f04-441a-bb53-d341ce0143ef)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+![Screenshot 2025-05-18 195808](https://github.com/user-attachments/assets/24420b46-95c8-45d6-adcc-b95577f0cb90)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
 
-**Edit a file directly in GitHub**
+  - Auto-location using **Google Maps API**
+- Track complaint status: `Pending`, `In Progress`, `Resolved`
+- View complaint history
+- Upvote/comment on neighborhood issues
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+### 🏛️ Authority/Admin Panel
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- Admin login for municipal staff
+- View complaints by zone or urgency
 
-## What technologies are used for this project?
+![Screenshot 2025-05-18 195737](https://github.com/user-attachments/assets/1b0b1542-bb00-4cb0-97d5-427b79306a9f)
 
-This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+![Screenshot 2025-05-18 195746](https://github.com/user-attachments/assets/bb446e6a-1ff9-4be9-9eec-a78439fb3794)
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/56dd278b-29e7-483e-88e6-bc4948c0841c) and click on Share -> Publish.
+- Assign worker or technician
+- Change status and add progress updates
+- Dashboard analytics: open/resolved issues, area-wise reports
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+### 📍 Geo-Map Integration
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Interactive map with markers based on issue status
+- Filter complaints by location, type, severity
+- Citizens view neighborhood complaints
+- Marker click reveals issue details
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+
+
+## 🛠️ Tech Stack
+
+### 🔷 Frontend
+
+- `React.js` – Component-based UI
+- `Redux` – Global state management
+- `React Router` – Client-side routing
+- `Tailwind CSS` – Utility-first responsive UI
+- `Axios` – API calls
+
+### 🔷 Backend
+
+- `Node.js + Express.js` – RESTful APIs
+- `Supabase` – Realtime database & user management
+- `JWT + Passport.js` – Secure authentication & authorization
+
+### 🌐 External APIs
+
+- `Cloudinary` – Image hosting and optimization
+- `Google Maps API` – Map display & geolocation services
+
+---
