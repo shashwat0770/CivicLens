@@ -1,5 +1,12 @@
 # 🏙️ CivicLens – Local Issue Reporting and Resolution
 
+
+[![Netlify Status]](https://civic-lens.netlify.app/)
+
+**CivicLens** is a web-based platform that enables citizens to report local civic issues like potholes, garbage, or broken lights using geo-tagged images. It streamlines issue resolution by connecting reports directly to municipal authorities for timely action and real-time tracking.
+
+🚀 **[Visit Deployed Website](https://civic-lens.netlify.app/)**
+
 ## 🧩 Problem Statement
 
 Local civic issues such as potholes, broken streetlights, open drains, and garbage dumps often go unreported due to inefficient or non-transparent communication between citizens and local authorities. This results in unresolved issues and public dissatisfaction.
