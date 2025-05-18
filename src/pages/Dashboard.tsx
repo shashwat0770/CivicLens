@@ -31,7 +31,7 @@ const Dashboard = () => {
         id: '1',
         title: 'Broken Road in Karol Bagh',
         description: 'The road near Karol Bagh metro station has several large potholes making it dangerous for two-wheelers especially during monsoon season.',
-        imageUrl: 'https://images.unsplash.com/photo-1552761831-7af39aude0ca?auto=format&fit=crop&w=800&h=500&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1635068741358-ab1b9813623f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnJva2VuJTIwcm9hZHxlbnwwfHwwfHx8MA%3D%3D',
         location: {
           lat: 28.6466,
           lng: 77.1905,
@@ -55,7 +55,7 @@ const Dashboard = () => {
         id: '2',
         title: 'Illegal Parking in Connaught Place',
         description: 'Multiple cars are constantly parked in no-parking zones near Connaught Place, blocking pedestrian walkways and causing traffic congestion.',
-        imageUrl: 'https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=800&h=500&q=80',
+        imageUrl: 'https://media.istockphoto.com/id/1463835828/photo/lift-truck-removing-illegally-parked-vehicle.jpg?s=612x612&w=0&k=20&c=O7G__v2E2Mr3BPnzwDVn9ap1Oy9LXEjq_V-jWACQDlM=',
         location: {
           lat: 28.6289,
           lng: 77.2065,
@@ -71,7 +71,7 @@ const Dashboard = () => {
         id: '3',
         title: 'Littering and Waste Disposal Issue',
         description: 'The area near Nehru Place market has overflowing garbage bins that haven\'t been cleaned for days causing health hazards.',
-        imageUrl: 'https://images.unsplash.com/photo-1605600659873-d808a13e4d9a?auto=format&fit=crop&w=800&h=500&q=80',
+        imageUrl: 'https://media.gettyimages.com/id/1025471054/photo/garbage-pollution-global-warming.jpg?s=612x612&w=0&k=20&c=i-fOgSq3h_ML9Gp0uAVYYzCV3Vi3HhPZZzwFIQRIV-A=',
         location: {
           lat: 28.5491,
           lng: 77.2540,
@@ -96,7 +96,7 @@ const Dashboard = () => {
         id: '4',
         title: 'Noise Pollution from Construction',
         description: 'Ongoing construction at Dwarka Sector 12 continues even during night hours causing severe noise pollution for residents.',
-        imageUrl: 'https://images.unsplash.com/photo-1533625216968-c4d9a9a7a636?auto=format&fit=crop&w=800&h=500&q=80',
+        imageUrl: 'https://t3.ftcdn.net/jpg/05/13/02/44/240_F_513024415_blH36yE0tARUqNXldCSXlmcQv7Znp2lV.jpg',
         location: {
           lat: 28.5921,
           lng: 77.0420,
@@ -112,7 +112,7 @@ const Dashboard = () => {
         id: '5',
         title: 'Open Defecation Near Yamuna Bank',
         description: 'Despite Swachh Bharat initiatives, open defecation is common near the Yamuna river banks near unauthorized colonies, creating health hazards.',
-        imageUrl: 'https://images.unsplash.com/photo-1575783970733-1aaedde1db74?auto=format&fit=crop&w=800&h=500&q=80',
+        imageUrl: 'https://media.istockphoto.com/id/1136672861/vector/stop-open-defecation-healthcare-infographic.jpg?s=612x612&w=0&k=20&c=BNy6rtKgSm6VRuWuJDANE0vKXtFBLAslYofBLtTaacI=',
         location: {
           lat: 28.6126,
           lng: 77.2571,
